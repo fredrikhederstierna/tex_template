@@ -1,0 +1,12 @@
+@startuml
+
+actor User
+participant Controller
+participant Database
+
+User -> Controller: Add employee
+Controller -> Database: addEmployee()
+Database --> Controller: OK
+Controller --> User: Success
+
+@enduml

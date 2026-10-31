@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="800"
+     height="350"
+     viewBox="0 0 800 350">
+
+  <!-- Arrow definition -->
+  <defs>
+    <marker id="arrow"
+            markerWidth="10"
+            markerHeight="10"
+            refX="9"
+            refY="3"
+            orient="auto">
+      <path d="M0,0 L0,6 L9,3 Z" fill="black"/>
+    </marker>
+  </defs>
+
+
+  <!-- SENSOR BLOCK -->
+  <rect x="50"
+        y="80"
+        width="160"
+        height="70"
+        fill="white"
+        stroke="black"
+        stroke-width="2"/>
+
+  <text x="130"
+        y="122"
+        text-anchor="middle"
+        font-family="sans-serif"
+        font-size="20">
+    Sensor
+  </text>
+
+
+  <!-- CONTROLLER BLOCK -->
+  <rect x="320"
+        y="80"
+        width="160"
+        height="70"
+        fill="white"
+        stroke="black"
+        stroke-width="2"/>
+
+  <text x="400"
+        y="122"
+        text-anchor="middle"
+        font-family="sans-serif"
+        font-size="20">
+    Controller
+  </text>
+
+
+  <!-- ACTUATOR BLOCK -->
+  <rect x="590"
+        y="80"
+        width="160"
+        height="70"
+        fill="white"
+        stroke="black"
+        stroke-width="2"/>
+
+  <text x="670"
+        y="122"
+        text-anchor="middle"
+        font-family="sans-serif"
+        font-size="20">
+    Actuator
+  </text>
+
+
+  <!-- LOGGER BLOCK -->
+  <rect x="320"
+        y="230"
+        width="160"
+        height="70"
+        fill="white"
+        stroke="black"
+        stroke-width="2"/>
+
+  <text x="400"
+        y="272"
+        text-anchor="middle"
+        font-family="sans-serif"
+        font-size="20">
+    Logger
+  </text>
+
+
+  <!-- SENSOR -> CONTROLLER -->
+  <line x1="210"
+        y1="115"
+        x2="320"
+        y2="115"
+        stroke="black"
+        stroke-width="2"
+        marker-end="url(#arrow)"/>
+
+
+  <!-- CONTROLLER -> ACTUATOR -->
+  <line x1="480"
+        y1="115"
+        x2="590"
+        y2="115"
+        stroke="black"
+        stroke-width="2"
+        marker-end="url(#arrow)"/>
+
+
+  <!-- CONTROLLER -> LOGGER -->
+  <line x1="400"
+        y1="150"
+        x2="400"
+        y2="230"
+        stroke="black"
+        stroke-width="2"
+        marker-end="url(#arrow)"/>
+
+</svg>

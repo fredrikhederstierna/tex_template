@@ -1,0 +1,25 @@
+% Example of simple state machine using TikZ
+\begin{figure}[ht]
+    \centering
+
+    \begin{tikzpicture}[
+        ->,
+        >=Stealth,
+        node distance=3cm,
+        every state/.style={thick}
+    ]
+
+    \node[state, initial] (idle) {Idle};
+    \node[state, right=of idle] (active) {Active};
+    \node[state, below=of active] (error) {Error};
+
+    \path
+        (idle) edge node[above] {start} (active)
+        (active) edge[bend left] node[right] {fault} (error)
+        (error) edge[bend left] node[left] {reset} (idle);
+
+    \end{tikzpicture}
+
+    \caption{System state machine.}
+    \label{fig:state-machine}
+\end{figure}

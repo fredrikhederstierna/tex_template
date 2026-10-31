@@ -1,0 +1,159 @@
+
+% Simple LaTeX document example
+\documentclass[11pt]{article}
+
+% Include template
+\input{template.tex}
+
+% Begin the document
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \begin{center}
+        \vspace{0.3 cm}
+        \includegraphics[width=5cm]{figures/logo.jpg} \\
+        \vspace{0.3 cm}
+        \textcolor{blue}{{\Huge \textbf{My document}}} \\
+        \vspace{0.4 cm}
+        \textcolor{blue}{{\large Version: \ref{lastVersionNumber}}} \\
+        \vspace{1.6 cm}
+    \end{center}
+
+    \begin{tcolorbox}[width=\textwidth, colframe={blue}, title=Classification: Public domain]
+        This document and its contents \textbf{is fully free to use} and is in the public domain.\\
+    \end{tcolorbox}
+
+    \thispagestyle{empty}
+    \hypersetup{pageanchor=false}
+\end{titlepage}
+\newpage
+
+% Footer
+\newpage
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+
+% Table of contents
+\tableofcontents
+\newpage
+
+% Version list
+\section{Version history}
+
+\newcounter{version}
+
+\begin{tabularx}{\textwidth}{
+    |>{\centering\arraybackslash}p{1.2cm}
+    |>{\centering\arraybackslash}p{2.2cm}
+    |>{\centering\arraybackslash}p{3cm}
+    |X|
+}
+    \hline
+    \textbf{Version} &
+    \textbf{Date} &
+    \textbf{Author} &
+    \textbf{Description} \\
+    \hline
+    \endfirsthead
+
+    \hline
+    \textbf{Version} &
+    \textbf{Date} &
+    \textbf{Author} &
+    \textbf{Description} \\
+    \hline
+    \endhead
+
+    \hline
+    \multicolumn{4}{r}{\textit{Continued on next page}} \\
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    \refstepcounter{version}
+    \theversion &
+    2026-09-01 &
+    Fredrik Hederstierna &
+    First version made in \LaTeX. \\
+    \hline
+
+    \refstepcounter{version}
+    \theversion &
+    2026-09-10 &
+    Fredrik Hederstierna &
+    Renamed and updated. \newline
+    Fixed. \\
+    \hline
+
+    \refstepcounter{version}
+    \label{lastVersionNumber} % NOTE: keep this last to get version on title page and footer
+    \theversion &
+    2026-09-20 &
+    Fredrik Hederstierna &
+    \begin{itemize}[leftmargin=*, nosep]
+    \item Renamed the project.
+    \item Updated the architecture diagram.
+    \item Corrected formatting.
+    \end{itemize} \\
+
+\end{tabularx}
+\newpage
+
+% Introduction
+\section{Introduction}
+This is the introduction.
+
+% Enumeration style 'arabic' for numbers, 'Alph' for A-Z, 'alph' a-z, roman/Roman for ii/II,
+% you can also add eg '.' or '()' around enum-char.
+\begin{enumerate}[label=\textbf{\Roman*.}, ref=\Roman*]
+    \setcounter{enumi}{0}
+    \item First version made in \LaTeX.
+    \item Changes.
+    \begin{itemize}
+        \item Renamed.
+        \item Updated.
+    \end{itemize}
+    \item Corrected.
+\end{enumerate}
+
+\subsection{Subsection}
+This is a subsection
+
+\subsubsection{Subsubsection}
+This is a subsubsection
+
+% \setcounter{tocdepth}{4}
+\paragraph{Subsubsubsection}
+This is a subsubsubsection
+
+\newpage
+
+% Include stste diagram example
+\input{figures/state_diagram.tex}
+
+\newpage
+
+% Include sequence diagram example
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]
+        {figures/sequence_diagram.png}
+    \caption{Sequence diagram example.}
+    \label{fig:my-sequence-diagram}
+\end{figure}
+
+\newpage
+
+% Include block diagram example
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]
+        {figures/block_diagram.pdf}
+    \caption{Block diagram example.}
+    \label{fig:my-block-diagram}
+\end{figure}
+
+% End the document
+\newpage
+\end{document}
